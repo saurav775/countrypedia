@@ -5,7 +5,7 @@ import styles from "../../styles/Navbar.module.css";
 const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   return (
-    <div className={styles.nav_container}>
+    <nav className={`${theme} ${styles.nav_container}`}>
       <div className="container">
         <div className={styles.nav_wrp}>
           <p>Where in the world?</p>
@@ -15,7 +15,7 @@ const Navbar = () => {
           </button>
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
