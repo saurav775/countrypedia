@@ -1,0 +1,22 @@
+.nav_container {
+  background-color: var(--elements);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.nav_wrp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+.nav_wrp p {
+  font-size: 2rem;
+  font-weight: 800;
+}
+.theme_toggle_btn {
+  background-color: var(--elements);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+.theme_toggle_btn span {
+  margin-left: 0.5rem;
+}

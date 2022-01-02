@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+:root {
+  --dark-blue: hsl(209, 23%, 22%);
+  --very-dark-blue-bg: hsl(207, 26%, 17%);
+  --very-dark-blue-text: hsl(200, 15%, 8%);
+  --dark-gray: hsl(0, 0%, 52%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.light {
+  --background: var(--very-light-gray);
+  --elements: var(--white);
+  --input: var(--dark-gray);
+  --text: var(--very-dark-blue-text);
+}
+
+.dark {
+  --background: var(--very-dark-blue-bg);
+  --elements: var(--dark-blue);
+  --input: var(--dark-blue);
+  --text: var(--white);
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--text);
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+  font-size: 62.5%;
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: unset;
+  font-family: "Nunito Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  margin: 0;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
