@@ -1,0 +1,48 @@
+.main_container {
+  background-color: var(--background);
+}
+.empty_countries_list {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.country_cards_wrp {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-gap: 6rem;
+  padding-top: 5rem;
+}
+.card_wrp {
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.flag {
+  height: 16rem;
+  width: 100%;
+  object-fit: cover;
+}
+.card_details {
+  padding: 2rem 1.5rem 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.country_name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+.card_list_items {
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+.list_type_text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
+.list_item_text {
+  font-size: 1.4rem;
+}

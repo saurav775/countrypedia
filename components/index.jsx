@@ -1,2 +1,4 @@
 import Navbar from "./Navbar";
-export { Navbar };
+import CountryCard from "./CountryCard";
+
+export { Navbar, CountryCard };
