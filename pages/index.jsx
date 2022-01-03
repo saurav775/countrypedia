@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../providers";
-import { CountryCard } from "../components";
+import { CountryCard, Search, Filter } from "../components";
 import styles from "../styles/Home.module.css";
 
 export default function Home(props) {
@@ -10,6 +10,10 @@ export default function Home(props) {
     <main className={theme}>
       <div className={styles.main_container}>
         <div className="container">
+          <div className={styles.search_filter_wrp}>
+            <Search />
+            <Filter />
+          </div>
           {!countries.length ? (
             <div className={styles.empty_countries_list}>
               No countries to show

@@ -46,7 +46,9 @@ button {
   font-family: "Nunito Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-
+select {
+  grid-area: select;
+}
 p {
   margin: 0;
 }
