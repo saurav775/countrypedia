@@ -8,11 +8,15 @@ export default function Home(props) {
   const { countriesData = [] } = props;
   const [countries, setCountries] = useState(countriesData);
   const [currentRegion, setCurrentRegion] = useState("");
+  const [searchText, setSearchText] = useState("");
   const updateCountriesData = (data) => {
     setCountries(data);
   };
   const updateRegion = (data) => {
     setCurrentRegion(data);
+  };
+  const updateSearchText = (data) => {
+    setSearchText(data);
   };
   return (
     <main className={theme}>
@@ -23,11 +27,13 @@ export default function Home(props) {
               updateCountries={updateCountriesData}
               countries={countriesData}
               currentRegion={currentRegion}
+              updateSearchText={updateSearchText}
             />
             <Filter
               updateCountries={updateCountriesData}
               countries={countriesData}
               updateRegion={updateRegion}
+              searchText={searchText}
             />
           </div>
           {!countries.length ? (

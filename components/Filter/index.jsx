@@ -3,7 +3,7 @@ import styles from "../../styles/Home.module.css";
 const regions = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
 
 const Filter = (props) => {
-  const { countries, updateCountries, updateRegion } = props;
+  const { countries, updateCountries, updateRegion, searchText } = props;
   const [filterKeys, setKeys] = useState("");
   const handleSelect = (event) => {
     const { value } = event.target;
@@ -11,11 +11,18 @@ const Filter = (props) => {
     updateRegion(value);
   };
   useEffect(() => {
-    const filterCountries = countries.filter(
-      (country) => country.region === filterKeys
-    );
+    const filterCountries = countries.filter((country) => {
+      if (searchText) {
+        return (
+          country.name.toLowerCase().includes(searchText.toLowerCase()) &&
+          country.region === filterKeys
+        );
+      } else {
+        return country.region === filterKeys;
+      }
+    });
     filterKeys && updateCountries(filterCountries);
-  }, [filterKeys]);
+  }, [filterKeys, searchText]);
   return (
     <div className={styles.filter_wrp}>
       <select

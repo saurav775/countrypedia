@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import styles from "../../styles/Home.module.css";
 
 const Search = (props) => {
-  const { countries, updateCountries, currentRegion } = props;
+  const { countries, updateCountries, currentRegion, updateSearchText } = props;
   const [searchKeys, setKeys] = useState("");
   const handleSearchChange = (event) => {
     const { value } = event.target;
     setKeys(value);
+    updateSearchText(value);
   };
   useEffect(() => {
     const filterCountries = countries.filter((country) => {
