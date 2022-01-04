@@ -12,11 +12,11 @@ const Search = (props) => {
     const filterCountries = countries.filter((country) => {
       if (currentRegion) {
         return (
-          country.name.toLowerCase().includes(searchKeys) &&
+          country.name.toLowerCase().includes(searchKeys.toLowerCase()) &&
           country.region === currentRegion
         );
       } else {
-        return country.name.toLowerCase().includes(searchKeys);
+        return country.name.toLowerCase().includes(searchKeys.toLowerCase());
       }
     });
     updateCountries(filterCountries);
