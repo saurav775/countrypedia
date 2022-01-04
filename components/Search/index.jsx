@@ -1,11 +1,35 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../../styles/Home.module.css";
 
-const Search = () => {
+const Search = (props) => {
+  const { countries, updateCountries, currentRegion } = props;
+  const [searchKeys, setKeys] = useState("");
+  const handleSearchChange = (event) => {
+    const { value } = event.target;
+    setKeys(value);
+  };
+  useEffect(() => {
+    const filterCountries = countries.filter((country) => {
+      if (currentRegion) {
+        return (
+          country.name.toLowerCase().includes(searchKeys) &&
+          country.region === currentRegion
+        );
+      } else {
+        return country.name.toLowerCase().includes(searchKeys);
+      }
+    });
+    updateCountries(filterCountries);
+  }, [searchKeys, currentRegion]);
   return (
     <div className={styles.search_wrp}>
       <i className="fa fa-search" />
-      <input type="text" name="search" placeholder="Search for a country..." />
+      <input
+        type="text"
+        name="search"
+        placeholder="Search for a country..."
+        onChange={handleSearchChange}
+      />
     </div>
   );
 };

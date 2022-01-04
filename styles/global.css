@@ -4,7 +4,7 @@
   --very-dark-blue-bg: hsl(207, 26%, 17%);
   --very-dark-blue-text: hsl(200, 15%, 8%);
   --dark-gray: hsl(0, 0%, 52%);
-  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-gray: hsl(0, 0%, 95%);
   --white: hsl(0, 0%, 100%);
 }
 
@@ -60,6 +60,6 @@ p {
 
 @media (max-width: 1280px) {
   .container {
-    padding: 0 1.5rem;
+    padding: 0 2rem;
   }
 }

@@ -1,18 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "../providers";
 import { CountryCard, Search, Filter } from "../components";
 import styles from "../styles/Home.module.css";
 
 export default function Home(props) {
   const { theme } = useContext(ThemeContext);
-  const { countries = [] } = props;
+  const { countriesData = [] } = props;
+  const [countries, setCountries] = useState(countriesData);
+  const [currentRegion, setCurrentRegion] = useState("");
+  const updateCountriesData = (data) => {
+    setCountries(data);
+  };
+  const updateRegion = (data) => {
+    setCurrentRegion(data);
+  };
   return (
     <main className={theme}>
       <div className={styles.main_container}>
         <div className="container">
           <div className={styles.search_filter_wrp}>
-            <Search />
-            <Filter />
+            <Search
+              updateCountries={updateCountriesData}
+              countries={countriesData}
+              currentRegion={currentRegion}
+            />
+            <Filter
+              updateCountries={updateCountriesData}
+              countries={countriesData}
+              updateRegion={updateRegion}
+            />
           </div>
           {!countries.length ? (
             <div className={styles.empty_countries_list}>
@@ -32,8 +48,8 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const countries = await (
+  const countriesData = await (
     await fetch(`https://restcountries.com/v2/all`)
   ).json();
-  return { props: { countries } };
+  return { props: { countriesData } };
 }
